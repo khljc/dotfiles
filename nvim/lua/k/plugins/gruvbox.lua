@@ -4,11 +4,11 @@ return {
   config = function()
     require("gruvbox").setup({
       palette_overrides = {
-        bg0 = "#2A2923",  -- Set your desired background color
+        bg0 = "#2A2923",  
       },
       overrides = {
-        Normal = { bg = "#2A2923" },  -- Ensure the Normal highlight group matches
-      }
+        Normal = { bg = "#2A2923" },  
+        }
     })
     vim.cmd("colorscheme gruvbox")
   end,
