@@ -249,9 +249,9 @@ mode "$mode_gaps_outer" {
 
 #bindsym $mod+z exec rofi -show run -lines 20 -eh 1.3 -opacity "85" -bw 0 -font "System San Francisco Display 10"
 
-exec_always feh --bg-scale /home/k/Pictures/wallpaper.jpg
-exec_always xrandr --output HDMI-2 --auto --left-of eDP-1
-exec_always syncthing
+exec_always --no-startup-id ./.config/i3/ranwall.sh
+exec_always --no-startup-id xrandr --output HDMI-2 --auto --left-of eDP-1
+exec --no-startup-id syncthing
 
 # Sreen brightness controls
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -278,7 +278,7 @@ exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 workspace 1 output HDMI-2
 workspace 2 output HDMI-2
 workspace 3 output HDMI-2
-workspace 4 output eDPI-1
+workspace 4 output HDMI-2
 workspace 5 output eDPI-1
 workspace 6 output eDPI-1
 workspace 7 output eDPI-1
@@ -287,7 +287,7 @@ workspace 9 output eDPI-1
 workspace 10 output eDPI-1
 
 # redshift
-exec --no-startup-id "redshift -P -O 2500" # Just so startup with my preffered values
+exec --no-startup-id "redshift -P -O 4000" 
 bindsym $mod+ctrl+r mode "$mode_redshift"
 set $mode_redshift Set colour temperature: (a)uto, (r)eset, (2)500K, (3)000K, (4)000K, (5)000K
 set $kill_redshift pkill -9 redshift;
