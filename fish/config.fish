@@ -11,20 +11,20 @@ zoxide init fish | source
 
 # aliases
 alias n="nvim"
-alias e="eza -l"
-alias ea="eza -la"
+alias e="ls -l"
 alias r="ranger"
+alias grep='grep --color=auto'
 
 # startup commands
 function fish_greeting
 
 	# greetings
   set powered_msgs \
-    "And that ye study to be quiet, and to do your own business, and to work with your own hands, as we commanded you;" \
-    "In all things shewing thyself a pattern of good works; in doctrine shewing uncorruptness, gravity, sincerity," \
+    "In all things shewing thyself a pattern of good works;" \
     "Live a quiet and rigtheous life, worthy of God." \
     "Lord, increase our faith." \
-    "Whatsoever a man soweth, that sall he also reap."
+    "Whatsoever a man soweth, that sall he also reap."\
+    "How shall we escape, if we neglect so great a salvation?"
 
 	# picks a msg randomly
   set chosen_msg (random)"%"(count $powered_msgs)
@@ -40,4 +40,6 @@ export PATH="$PATH:/home/k/.cargo/bin"
 export PATH="$PATH:/home/k/.config/emacs/bin"
 
 # starship
-starship init fish | source
+#starship init fish | source
+
+set -gx MANPAGER 'nvim -c "Man!" -c "set nonumber" -c "set norelativenumber" -c "set nofoldenable"'
