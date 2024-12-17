@@ -1,2 +1,2 @@
 # dotfiles
-Also basically copied from James Scholz
+gruvbox dwm, using Luke's build.
