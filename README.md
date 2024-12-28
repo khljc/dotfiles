@@ -1,2 +1,2 @@
 # dotfiles
-gruvbox dwm, using Luke's build.
+gruvbox goes hard
