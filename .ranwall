@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Randomly select an image from the ~/Pictures/wall directory
+IMAGE=$(find ~/Pictures/wall -type f \( -iname \*.jpg -o -iname \*.png \) | shuf -n 1)
+
+# Set the selected image as the wallpaper using feh
+feh --bg-scale "$IMAGE"
