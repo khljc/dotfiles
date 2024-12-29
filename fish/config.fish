@@ -2,7 +2,12 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# defaults
+function f
+    fff $argv
+    set -q XDG_CACHE_HOME; or set XDG_CACHE_HOME $HOME/.cache
+    cd (cat $XDG_CACHE_HOME/fff/.fff_d)
+end
+
 set -gx EDITOR "nvim"
 set -gx VISUAL "nvim"
 
@@ -39,7 +44,8 @@ function fish_greeting
 export PATH="$PATH:/home/k/.cargo/bin"
 export PATH="$PATH:/home/k/.config/emacs/bin"
 
-# starship
-#starship init fish | source
-
+# becoming a true man.
 set -gx MANPAGER 'nvim -c "Man!" -c "set nonumber" -c "set norelativenumber" -c "set nofoldenable"'
+
+# ls colour change
+set -Ux LS_COLORS 'di=1;33'
