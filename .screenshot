@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+### Full credit for this script to https://github.com/TheGassyNinja
+
+export DISPLAY=:0
+current=$(date +%H-%M-%S-%d-%m-%Y).png
+screenshot_dir="${HOME}/Pictures/screenshots"
+if [[ -z "${1}" ]]; then
+   import -window root "${screenshot_dir}/${current}" # All screen
+else
+   import "${screenshot_dir}/${current}" # Custom area screenshot
+fi
+notify-send "screenshot has been taken."
