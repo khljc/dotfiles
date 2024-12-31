@@ -1,2 +1,0 @@
-# dotfiles
-gruvbox goes hard
