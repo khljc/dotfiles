@@ -40,7 +40,8 @@ picom --config /home/k/.config/picom.conf &
 ./.ranwall &
 
 # bluelight filter
-redshift -l 3.140853:101.693207 -t 5000k:3500k &
+# redshift -l 3.140853:101.693207 -t 5000k:3500k &
+redshift -O 4500k &
 
 # dunst
 dunst &
