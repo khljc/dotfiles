@@ -6,8 +6,8 @@
 PS1="\${PWD} ➜ " 
 
 # aliases
-alias e='ls --color=auto -1'
-alias ea='ls -lah --color=auto -1'
+alias e='ls -lh'
+alias ea='ls -lah'
 alias n='nvim'
 
 # fff function to cd on exit
@@ -18,6 +18,10 @@ f() {
 
 # setting defaults
 export EDITOR=nvim
+export VISUAL=nvim
+
+# vi keybindings
+set -o vi
 
 # zoxide
 eval "$(zoxide init bash)"
@@ -25,7 +29,4 @@ eval "$(zoxide init bash)"
 # pfetch
 export PF_ASCII="openbsd"
 export PF_INFO="ascii title os host kernel uptime pkgs memory"
-
-# make ls folder yellow
-export LS_COLORS=$LS_COLORS:'di=1;33'
 

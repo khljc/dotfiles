@@ -679,10 +679,6 @@ c.url.searchengines = {
 c.url.start_pages = ['https://khljc.github.io/khlvjc/']
 c.url.default_page = "https://khljc.github.io/khlvjc/"
 
-config.set("fileselect.handler", "external")
-config.set("fileselect.single_file.command", ['kitty', '-e', 'ranger', '--choosefile', '{}'])
-config.set("fileselect.multiple_files.command", ['kitty', '-e', 'ranger', '--choosefiles', '{}'])
-
 config.set("colors.webpage.darkmode.enabled", True)
 
 # Bindings to use dmenu rather than qutebrowser's builtin search.
