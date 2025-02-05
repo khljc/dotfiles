@@ -666,18 +666,17 @@ class ConfigContainer:
         return attr
 
 c.url.searchengines = {
-        'DEFAULT': 'https://lite.duckduckgo.com/lite/?q={}',
-        '!d':       'https://duckduckgo.com/?ia=web&q={}',
+        'DEFAULT': 'https://duckduckgo.com/?ia=web&q={}',
         '!gh':      'https://github.com/search?o=desc&q={}&s=stars',
         '!gi':      'https://www.google.com/search?tbm=isch&q={}&tbs=imgo:1',
         '!m':       'https://www.google.com/maps/search/{}',
         '!r':       'https://www.reddit.com/search?q={}',
         '!t':       'https://www.thesaurus.com/browse/{}',
         '!w':       'https://en.wikipedia.org/wiki/{}',
-        '!yt':      'https://www.youtube.com/results?search_query={}'}
+        '!wt':       'https://en.wiktionary.org/wiki/{}'}
 
-c.url.start_pages = ['https://khljc.github.io/khlvjc/']
-c.url.default_page = "https://khljc.github.io/khlvjc/"
+c.url.start_pages = ['https://khljc.github.io/khlvjc/kjv/pg10-images.html']
+c.url.default_page = "https://khljc.github.io/khlvjc/kjv/pg10-images.html"
 
 config.set("colors.webpage.darkmode.enabled", True)
 

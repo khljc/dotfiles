@@ -31,7 +31,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # keyb layout
-setxkbmap -layout jp &
+setxkbmap -layout en &
+
+# monitors
+xrandr --output LVDS-1 --auto --right-of DP-1
 
 # compositor
 picom --config /home/k/.config/picom.conf &
@@ -40,11 +43,14 @@ picom --config /home/k/.config/picom.conf &
 ./.ranwall &
 
 # bluelight filter
-# redshift -l 3.140853:101.693207 -t 5000k:3500k &
-redshift -O 4500k &
+redshift -l 3.140853:101.693207 -t 5000k:3500k &
+#redshift -O 4500k &
 
 # dunst
 dunst &
+
+# dwmblocks
+dwmblocks &
 
 # exec dwm
 exec dwm

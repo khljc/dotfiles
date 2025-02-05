@@ -3,8 +3,8 @@
 ### Full credit for this script to https://github.com/TheGassyNinja
 
 export DISPLAY=:0
-current=$(date +%H-%M-%S-%d-%m-%Y).png
-screenshot_dir="${HOME}/Pictures/screenshots"
+current=$(date +%d-%m-%Y).png
+screenshot_dir="${HOME}/pictures/screenshots"
 if [[ -z "${1}" ]]; then
    import -window root "${screenshot_dir}/${current}" # All screen
 else

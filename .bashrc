@@ -3,12 +3,12 @@
 # If not running interactively, don't do anything
 
 # prompt
-PS1="\${PWD} ➜ " 
+PS1="\${PWD} > " 
 
 # aliases
-alias e='ls -lh'
-alias ea='ls -lah'
+alias ls='ls -lh'
 alias n='nvim'
+alias e='emacs'
 
 # fff function to cd on exit
 f() {
@@ -29,4 +29,5 @@ eval "$(zoxide init bash)"
 # pfetch
 export PF_ASCII="openbsd"
 export PF_INFO="ascii title os host kernel uptime pkgs memory"
-
+export GTK_THEME="Adwaita:dark"
+export PATH="~/.config/emacs/bin:$PATH"
