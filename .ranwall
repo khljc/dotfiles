@@ -1,5 +1,0 @@
-#!/bin/bash
-
-IMAGE=$(find ~/pictures/wall -type f \( -iname \*.jpg -o -iname \*.png \) | shuf -n 1)
-
-feh --bg-scale "$IMAGE"
