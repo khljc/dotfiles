@@ -36,12 +36,12 @@
     #       and the given value is treated as the maximum height
 
     # Position the notification in the top right corner
-    origin = top-left
+    origin = top-right
 
     # Offset from the origin
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     # offset = 10x50
-    offset = (0, 0)
+    offset = (10, 10)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -344,9 +344,9 @@ foreground = "#d4be98"
 frame_color = "#7daea3"
 
 [urgency_normal]
-background = "#282828"
-foreground = "#d4be98"
-frame_color = "#a9b665"
+background = "#fbf1c7"
+foreground = "#3c3836"
+frame_color = "#79740e"
 
 [urgency_critical]
 background = "#3c1f1e"

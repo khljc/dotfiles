@@ -675,8 +675,8 @@ c.url.searchengines = {
         '!w':       'https://en.wikipedia.org/wiki/{}',
         '!wt':       'https://en.wiktionary.org/wiki/{}'}
 
-c.url.start_pages = ['https://khljc.github.io/khlvjc/kjv/pg10-images.html']
-c.url.default_page = "https://khljc.github.io/khlvjc/kjv/pg10-images.html"
+c.url.start_pages = ['~/.config/qutebrowser/startpage/index.html']
+c.url.default_page = "~/.config/qutebrowser/startpage/index.html"
 
 config.set("colors.webpage.darkmode.enabled", True)
 

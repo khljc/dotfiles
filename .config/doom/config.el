@@ -21,7 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Fira Code Nerd Font" :size 14 :weight 'semi-bold)
+(setq doom-font (font-spec :family "Fira Code Nerd Font" :size 14 :weight 'medium)
       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 15))
 
 ;;
@@ -41,11 +41,12 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/documents/khlvjcs/org/")
-(setq org-roam-directory (file-truename "~/documents/khlvjc/org/roam/"))
-(setq org-agenda-files (append '("~/documents/khlvjc/org" "~/.emacs.d")
-                               (file-expand-wildcards "~/documents/khlvjc/org/roam/daily/*")))
+(setq org-directory "~/documents/independent/")
+(setq org-roam-directory (file-truename "~/documents/independent/venture/"))
+(setq org-agenda-files (append '("~/documents/independent/" "~/.emacs.d")
+                               (file-expand-wildcards "~/documents/independent/venture/daily/*")))
 (setq calendar-week-start-day 1)
+(setq org-log-into-drawer t)     ;; Disable logging into drawers
 
 (setq org-roam-file-extensions '("org"))
 
@@ -63,30 +64,29 @@
 ;;          (file-relative-name (org-roam-node-file node) org-roam-directory))))
 ;;     (error "")))
 ;;
-(setq org-roam-node-display-template
-      (concat "${type:15} ${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+
+(after! org-roam
+  (setq org-roam-node-display-template
+        (concat "${type:15} ${title:*} " (propertize "${tags:10}" 'face 'org-tag))))
 
 (setq org-roam-capture-templates
-      '(("m" "main" plain "%?"
-         :if-new (file+head "main/${slug}.org"
-                            "#+title: ${title}\n")
+      `(("b" "bones" plain "%?"
+         :if-new (file+head "bones/${slug}.org"
+                            "#+title: ${title}\n#+created: %<%d-%M-%Y>\n")
          :immediate-finish t
          :unnarrowed t)
-        ("r" "reference" plain "%?"
-         :if-new (file+head "reference/${title}.org"
-                            "#+title: ${title}\n")
+        ("c" "indy" plain "%?"
+         :if-new (file+head "class/${slug}.org"
+                            "#+book: ${title}\n#+created: %<%d-%M-%Y>\n")
          :immediate-finish t
          :unnarrowed t)
-        ("a" "article" plain "%?"
-         :if-new (file+head "articles/${title}.org"
-                            "#+title: ${title}\n#+filetags: :article:\n")
-         :immediate-finish t
-         :unnarrowed t)))
+        ))
+
 
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory (file-truename "~/documents/khlvjc/org/roam/"))
+  (org-roam-directory (file-truename "~/documents/independent/venture/"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-graph)
@@ -117,7 +117,7 @@
 (use-package! spacious-padding
   :config
   (setq spacious-padding-widths
-        '(:internal-border-width 17  ;; Adjust the value to your preference
+        '(:internal-border-width 12  ;; Adjust the value to your preference
           :right-divider-width 0
           :fringe-width 5
           :tab-width 10
@@ -126,9 +126,10 @@
           :header-line-width 5
           :mode-line-width 5
           :scroll-bar-width 10))
+  (setq spacious-padding-subtle-frame-lines t)
   (remove-hook 'doom-init-ui-hook #'window-divider-mode)
   (spacious-padding-mode)
-  )
+ )
 
 ;; removing evil-snipe
 (after! evil-snipe

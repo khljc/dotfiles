@@ -6,6 +6,16 @@
 
 config_version: 2
 settings:
+  auto_save.session:
+    global: true
+  bindings.commands:
+    global:
+      normal:
+        ateboard: griptape
+        xs: config-cycle statusbar.show always never
+        xt: config-cycle tabs.show always never
+        xx: config-cycle tabs.show always never;; config-cycle statusbar.show always
+          never
   colors.messages.warning.bg:
     global: darkorange
   colors.webpage.bg:
@@ -13,19 +23,32 @@ settings:
   colors.webpage.darkmode.algorithm:
     global: lightness-cielab
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
   colors.webpage.darkmode.policy.images:
     global: never
   colors.webpage.darkmode.policy.page:
     global: smart
   colors.webpage.preferred_color_scheme:
     global: dark
+  completion.web_history.max_items:
+    global: -1
+  content.blocking.enabled:
+    global: true
+  content.blocking.method:
+    global: auto
+  content.blocking.whitelist:
+    global: null
+  content.javascript.clipboard:
+    https://chatgpt.com: access-paste
   content.media.audio_capture:
     https://meet.google.com: true
   content.media.audio_video_capture:
     https://meet.google.com: true
   content.media.video_capture:
     https://meet.google.com: true
+  content.notifications.enabled:
+    https://portal.ideasinternational.org.my: true
+    https://shopee.com.my: false
   statusbar.show:
     global: never
   tabs.show:

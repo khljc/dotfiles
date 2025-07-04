@@ -194,3 +194,4 @@
        (default +bindings +smartparens))
 
 (add-to-list 'load-path "~/.emacs.d/manual-packages/spacious-padding")
+(setq org-id-locations-file (expand-file-name "org-id-locations" user-emacs-directory))
