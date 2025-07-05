@@ -50,6 +50,6 @@ settings:
     https://portal.ideasinternational.org.my: true
     https://shopee.com.my: false
   statusbar.show:
-    global: never
+    global: always
   tabs.show:
     global: always
