@@ -40,6 +40,7 @@ settings:
     global: null
   content.javascript.clipboard:
     https://chatgpt.com: access-paste
+    https://github.com: access-paste
   content.media.audio_capture:
     https://meet.google.com: true
   content.media.audio_video_capture:

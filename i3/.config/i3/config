@@ -40,7 +40,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec kitty
 # bindsym $mod+Return exec i3-sensible-terminal
 
 #tab between workspaces
@@ -291,6 +291,10 @@ exec --no-startup-id redshift -l 3.140853:101.693207 -t 5000k:3300k &
 
 # monitor configuration
 exec --no-startup-id xrandr --output LVDS-1 --auto --right-of DP-1
+
+# cursor
+exec --no-startup-id ~/.xprofile
+exec --no-startup-id xrdb -merge ~/.Xresources
 
 # wallpaper
 exec_always feh --bg-scale ~/pictures/wall/500436ldsdl.jpg
