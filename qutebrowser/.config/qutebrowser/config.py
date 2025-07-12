@@ -29,11 +29,6 @@ instance = cast('Config', None)
 key_instance = cast('KeyConfig', None)
 cache = cast('configcache.ConfigCache', None)
 
-# statusbar and tabs
-config.bind('xs', 'config-cycle statusbar.show always never')
-config.bind('xt', 'config-cycle tabs.show always never')
-config.bind('xx', 'config-cycle tabs.show always never;; config-cycle statusbar.show always never')
-
 # Keeping track of all change filters to validate them later.
 change_filters: list["change_filter"] = []
 
@@ -671,15 +666,26 @@ c.url.searchengines = {
         '!gi':      'https://www.google.com/search?tbm=isch&q={}&tbs=imgo:1',
         '!m':       'https://www.google.com/maps/search/{}',
         '!r':       'https://www.reddit.com/search?q={}',
-        '!t':       'https://www.thesaurus.com/browse/{}',
         '!w':       'https://en.wikipedia.org/wiki/{}',
-        '!wt':       'https://en.wiktionary.org/wiki/{}'}
+        '!wt':      'https://en.wiktionary.org/wiki/{}',
+        '!yt':      'https://www.youtube.com/results?search_query={}'
+        }
 
 c.url.start_pages = ['~/.config/qutebrowser/startpage/index.html']
 c.url.default_page = "~/.config/qutebrowser/startpage/index.html"
 
-config.set("colors.webpage.darkmode.enabled", True)
+# darkmode
+config.set("colors.webpage.darkmode.enabled", False)
+c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
+
+# styles
+
+# statusbar and tabs
+config.bind('xs', 'config-cycle statusbar.show always never')
+config.bind('xt', 'config-cycle tabs.show always never')
+config.bind('xx', 'config-cycle tabs.show always never;; config-cycle statusbar.show always never')
 
 # Bindings to use dmenu rather than qutebrowser's builtin search.
 #config.bind('o', 'spawn --userscript dmenu-open')
 #config.bind('O', 'spawn --userscript dmenu-open --tab')
+
