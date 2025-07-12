@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Create screenshot directory if it doesn't exist
+mkdir -p ~/screenshots
+
+# Generate timestamp
+timestamp=$(date +'%d%m%y_%H%M')
+
+# Show menu
+chosen=$(echo -e "full\nselect\nwindow\ndelay" | dmenu -vi -i)
+
+if [[ $chosen = "full" ]]; then
+    scrot ~/screenshots/"$timestamp".png
+elif [[ $chosen = "select" ]]; then
+    scrot -s ~/screenshots/"$timestamp".png
+elif [[ $chosen = "window" ]]; then
+    scrot -u ~/screenshots/"$timestamp".png
+elif [[ $chosen = "delay" ]]; then
+    delay=$(dmenu -p "delay (seconds):")
+    scrot -d "$delay" ~/screenshots/"$timestamp".png
+fi
+
