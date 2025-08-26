@@ -38,9 +38,13 @@ settings:
     global: auto
   content.blocking.whitelist:
     global: null
+  content.geolocation:
+    https://www.vans.com.my: true
   content.javascript.clipboard:
     https://chatgpt.com: access-paste
     https://github.com: access-paste
+    https://pass.proton.me: access-paste
+    https://www.dns0.eu: access-paste
   content.media.audio_capture:
     https://meet.google.com: true
   content.media.audio_video_capture:
@@ -50,6 +54,11 @@ settings:
   content.notifications.enabled:
     https://portal.ideasinternational.org.my: true
     https://shopee.com.my: false
+    https://www.netflix.com: false
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: true
+  qt.workarounds.disable_accelerated_2d_canvas:
+    global: never
   statusbar.show:
     global: always
   tabs.show:

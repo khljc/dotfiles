@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Get URL from clipboard
+url=$(xclip -o -selection clipboard)
+
+# Ask for destination folder using dmenu
+dir=$(find ~/music/love/lelo ~/music/love/chill ~/music/love/praise ~/music/love/worship  ~/music/love/podcast -type d -maxdepth 2 2>/dev/null | dmenu -vi -l 10)
+
+# If both URL and directory are valid, download
+if [ -n "$url" ] && [ -d "$dir" ]; then
+    yt-dlp \
+        --cookies-from-browser firefox \
+        -x \
+        --embed-thumbnail \
+        --audio-format mp3 \
+        -P "$dir" \
+        "$url"
+fi
+

@@ -59,6 +59,7 @@ alias n='nvim'
 alias e='emacs'
 alias us='setxkbmap -layout us'
 alias jp='setxkbmap -layout jp'
+alias mpv='mpv --hwdec=auto'
 
 # Zoxide
 eval "$(zoxide init zsh)"
@@ -72,4 +73,8 @@ f() {
 
 # environment variables
 export PF_INFO="ascii title os wm shell uptime memory host "
+
+
+# Created by `pipx` on 2025-07-15 13:36:02
+export PATH="$PATH:/home/k/.local/bin"
 

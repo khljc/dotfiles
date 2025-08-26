@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Format current date as dd.mm.yy
+DATE=$(date +%d.%m.%y)
+
+# Target screenshot folder
+DIR="$HOME/pictures/progress"
+mkdir -p "$DIR"
+
+# Launch MPV with custom screenshot settings
+mpv --vo=gpu \
+    --gpu-api=opengl \
+    --untimed \
+    --no-cache \
+    --no-osc \
+    --profile=low-latency \
+    --title=webcam \
+    --screenshot-directory="$DIR" \
+    --screenshot-format=png \
+    --screenshot-template="${DATE}%P" \
+    /dev/video0 2>/dev/null
+

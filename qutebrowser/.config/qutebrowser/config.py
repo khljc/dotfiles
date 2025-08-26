@@ -675,7 +675,7 @@ c.url.start_pages = ['~/.config/qutebrowser/startpage/index.html']
 c.url.default_page = "~/.config/qutebrowser/startpage/index.html"
 
 # darkmode
-config.set("colors.webpage.darkmode.enabled", False)
+config.set("colors.webpage.darkmode.enabled", True)
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 
 # styles
@@ -689,3 +689,9 @@ config.bind('xx', 'config-cycle tabs.show always never;; config-cycle statusbar.
 #config.bind('o', 'spawn --userscript dmenu-open')
 #config.bind('O', 'spawn --userscript dmenu-open --tab')
 
+
+# Enable Chromium flags for GPU acceleration
+c.qt.args += [
+    "--enable-gpu-rasterization",
+    "--ignore-gpu-blocklist",
+]
